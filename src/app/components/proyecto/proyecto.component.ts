@@ -34,15 +34,16 @@ export class ProyectoComponent implements OnInit {
   }
 
   borrar (id: number){
-    if (id != undefined)
-    this.proyectoS.delete(id).subscribe(
-      fata => {
-        this.cargarProyecto();
-      }, err => {
-        alert("No se pudo eliminar");
-      }
-      
-    )
+    if (id != undefined){
+      this.proyectoS.delete(id).subscribe(
+        data => {
+          alert("Eliminado")
+          this.cargarProyecto();
+        }
+        
+      )
+    }
+    
   }
 
 }
